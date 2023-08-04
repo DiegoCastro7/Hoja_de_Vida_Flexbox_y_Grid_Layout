@@ -4,25 +4,28 @@
     box-sizing: border-box;
 }
 
-body {
+body, html{
     font-family:cursive; 
     line-height: 1.3;
     background-color: #f59999;
+    height: 100%;
+    width: 100%;
 }
 
 main {
     display: flex;
     background-color: #FFFFFF;
-    margin: 0 auto;
-    min-height: 100vh;
+    margin: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .personal {
     flex: 1;
     padding: 20px;
     background-color: #e4fce4;
-    height: 100vh;
-    
+    height: 100%;
+    width: 100%;
 }
 
 .primero {
@@ -60,7 +63,8 @@ main {
     padding: 20px;
     background-color: #e3ecfa;
     margin-left: 20px;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 #tskills {
@@ -96,7 +100,8 @@ main {
     padding: 20px;
     background-color: #ffe2e2;
     margin-left: 20px;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 .profesional h2 {
@@ -154,6 +159,22 @@ html {
     height: 100%;
 }
 section {
-    height:1000;
+    height:100% !important;
 }
 
+@media (max-width: 999px){
+    main {
+        display: grid;
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100% 100% 100%;
+        grid-template-areas: 
+        "personal"
+        "skills"
+        "profesional";
+    }
+    .profesional, .skills {
+        margin-left: 0px;
+        width: 100% !important;
+    }
+}
